@@ -39,7 +39,7 @@ jobs:
         run: npx quartz update
 
       - name: Build Quartz site
-        run: npm run build
+        run: npx quartz build -d docs
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
