@@ -34,18 +34,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Quartz plugins
-        run: |
-          npm install @quartz-community/bases-page
-          npm install @quartz-community/canvas-page
-          npm install @quartz-community/content-meta
-          npm install @quartz-community/content-page
-          npm install @quartz-community/encrypted-pages
-          npm install @quartz-community/folder-page
-          npm install @quartz-community/stacked-pages
-          npm install @quartz-community/syntax-highlighting
-          npm install @quartz-community/table-of-contents
-          npm install @quartz-community/tag-page
+      # 关键：在构建前先更新 Quartz（这会生成 .quartz/plugins）
+      - name: Update Quartz
+        run: npx quartz update
 
       - name: Build Quartz site
         run: npx quartz build

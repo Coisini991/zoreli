@@ -1,0 +1,16 @@
+.DS_Store
+
+node_modules
+
+prof
+tsconfig.tsbuildinfo
+.obsidian
+.quartz-cache
+private/
+.replit
+replit.nix
+
+# 完全忽略 .quartz 文件夹
+.quartz/
+
+quartz/cli/tui/dist/
