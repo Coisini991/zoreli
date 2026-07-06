@@ -24,10 +24,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22" # ✅ Quartz 5 要求 Node >= 22
+          node-version: "22"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Prepare Quartz
+        run: npx quartz update
 
       - name: Build Quartz site
         run: npx quartz build
